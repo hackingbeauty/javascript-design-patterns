@@ -1,5 +1,4 @@
-// Generic publisher functionality
-var Publisher = {
+var Publisher = {  // Generic publisher functionality
 	subscribers: {
 		any: [] // event type: subscribers
 	},
@@ -18,7 +17,7 @@ var Publisher = {
 	},
 	visitSubscribers: function (action, arg, type) {
 		var pubtype = type || 'any',
-			subscribers = this.subscribers[pubtype];
+			subscribers = this.subscribers[pubtype],
 			i,
 			max = subscribers.length;
 		for (i = 0; i < max; i += 1){
@@ -34,7 +33,7 @@ var Publisher = {
 	// Take an object and turn it into a publisher by simply copying
 	// over the generic publisher's methods:
 	makePublisher: function (o) {
-		var i;
+		var i, publisher = this;
 		for (i in publisher) {
 			if (publisher.hasOwnProperty(i) && typeof publisher[i] === 'function') {
 				o[i] = publisher[i];
@@ -43,5 +42,7 @@ var Publisher = {
 		o.subscribers = {any: []};
 	}
 }
+
+module.exports = Publisher;
 
 
