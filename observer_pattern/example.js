@@ -25,6 +25,6 @@ Paper.subscribe(Joe.drinkCoffee);
 Paper.subscribe(Joe.sundayPreNap, 'monthly');
 
 // Fire events
-Paper.daily();
-Paper.daily();
-Paper.monthly();
+Paper.daily(); 		// prints: "Just read big news today"
+Paper.daily(); 		// prints: "Just read big news today"
+Paper.monthly(); 	// prints: "About to fall asleep reading this interesting analysis"

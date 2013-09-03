@@ -8,6 +8,9 @@ var Publisher = {  // Generic publisher functionality
 			this.subscribers[type] = [];
 		}
 		this.subscribers[type].push(fn);
+		// for(var i =0;i<this.subscribers[type].length;i++){
+		// 	console.log(this.subscribers[type][i].toString());
+		// }
 	},
 	unsubscribe: function (fn, type) {
 		this.visitSubscribers('unsubscribe', fn, type);
